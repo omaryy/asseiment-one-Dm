@@ -1,0 +1,34 @@
+    public Vector intersection(Vector<Vector>v,int n1,int n2){
+        Vector result=new Vector();
+        for(int i=0;i<v.get(n1-1).size();i++)
+        {
+            for(int j=0;j<v.get(n2-1).size();j++)
+            {
+                if(v.get(n1-1).get(i).equals(v.get(n2-1).get(j)))
+                {
+                    result.add(v.get(n1-1).get(i));
+                }
+            }
+        }
+
+        return result;
+    }
+    public Vector complement(Vector u,Vector<Vector>v,int n){
+        Vector result=new Vector();
+        for(int i=0;i<v.get(n-1).size();i++)
+        {
+            for(int j=0;j<u.size();j++)
+            {
+                if(v.get(n-1).get(i).equals(u.get(j)))
+                {
+                    u.remove(j);
+                }
+            }
+        }
+        for(int i=0;i<u.size();i++)
+        {
+            result.add(u.get(i));
+        }
+
+        return result;
+    }
